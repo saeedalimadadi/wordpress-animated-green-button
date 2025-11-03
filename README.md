@@ -59,7 +59,58 @@ See LICENSE
 
 💡 روش استفاده:
 
-کافی است کد بالا را در هر بخش از محتوای پست خود قرار دهید.
+کافی است کد زیر را در هر بخش از محتوای پست خود قرار دهید.
 فقط لینک و متن دکمه را تغییر دهید.
 
 Developed by: [Saeed Alimadadi + ChatGPT AI]
+
+---
+
+## 🚀 Quick Usage
+
+Paste this snippet anywhere inside your WordPress post (Classic Editor or Block Editor):
+
+```html
+<a href="https://yourwebsite.com/product-page" class="magic-button"><span>View Product</span></a>
+
+<style>
+.magic-button {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border: 2px solid #03fc62;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.magic-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 100%;
+  height: 100%;
+  background-color: #03fc62;
+  transition: transform 0.4s ease;
+  transform-origin: center;
+  z-index: 0;
+}
+.magic-button:hover::before {
+  transform: translateX(-50%) scaleX(1);
+}
+.magic-button span {
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease;
+}
+.magic-button:hover span {
+  color: white;
+}
+</style>
